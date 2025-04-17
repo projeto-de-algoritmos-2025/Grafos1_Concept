@@ -1,4 +1,3 @@
-// Não ta funcionando ainda, falta a DFS, Demonstração e outras coisas.
 // Usar o timer e cls pra ficar visivel e da pra ver
 // Talvez colocar contador pra ver a quantidade de passos
 // Mostrar ordem dos passos talvez
@@ -45,6 +44,31 @@ Ponto desenfileirar(Fila *f) {
     return f->itens[f->frente++];
 }
 
+//  Pilha usada na DFS
+typedef struct {
+    Ponto itens[TAM * TAM];
+    int topo;
+} Pilha;
+
+void inicializarPilha(Pilha *p) {
+    p->topo = -1;
+}
+
+int pilhaVazia(Pilha *p) {
+    return p->topo == -1;
+}
+
+void empilhar(Pilha *p, int x, int y) {
+    p->topo++;
+    p->itens[p->topo].x = x;
+    p->itens[p->topo].y = y;
+}
+
+Ponto desempilhar(Pilha *p) {
+    return p->itens[p->topo--];
+}
+
+
 void imprimirMatriz(char matriz[TAM][TAM]) {
     for (int i = 0; i < TAM; i++) {
         for (int j = 0; j < TAM; j++) {
@@ -74,7 +98,7 @@ void bfs(char matriz[TAM][TAM], int startX, int startY) {
 
                 system("cls");
                 imprimirMatriz(matriz);
-                Sleep(1500); 
+                Sleep(1500);
 
                 // Observando com o timer alto, da pra ver que ele realiza o trabalho por camadas, e só termina quando finaliza uma camada, como explicado em aula
 
@@ -85,7 +109,39 @@ void bfs(char matriz[TAM][TAM], int startX, int startY) {
     }
 }
 
-// IMPLEMENTAR DFS *****
+void dfs(char matriz[TAM][TAM], int startX, int startY) {
+    Pilha p;
+    inicializarPilha(&p);
+    empilhar(&p, startX, startY);
+
+    while (!pilhaVazia(&p)) {
+        Ponto atual = desempilhar(&p);
+
+        // Verifica se já foi visitado
+        if (matriz[atual.x][atual.y] == '*') continue;
+
+        matriz[atual.x][atual.y] = '*';
+
+        // Exibe o passo
+        system("cls");
+        imprimirMatriz(matriz);
+        Sleep(1500);
+
+        for (int i = 3; i >= 0; i--) {
+            int nx = atual.x + dx[i];
+            int ny = atual.y + dy[i];
+
+            if (nx >= 0 && nx < TAM && ny >= 0 && ny < TAM && matriz[nx][ny] == '.') {
+                empilhar(&p, nx, ny);
+
+                // Seguindo um caminho até o fim e volta (backtracking), como abordado em sala, sendo útil para puzzles e labirintos.
+
+            }
+        }
+    }
+}
+
+
 
 int main() {
     char matriz[TAM][TAM];
@@ -96,7 +152,7 @@ int main() {
             matriz[i][j] = '.';
 
     int opcao;
-    printf("Escolha o algoritmo:\n1 - BFS\n2 - DFS (Nao funciona)\n> ");
+    printf("Escolha o algoritmo:\n1 - BFS\n2 - DFS\n> ");
     scanf("%d", &opcao);
 
     // Por enquanto pega o meio da matriz que a gente escolhe a partir do tamanho como ponto inicial da busca
