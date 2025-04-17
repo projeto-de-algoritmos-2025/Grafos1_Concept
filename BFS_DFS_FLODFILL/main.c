@@ -9,8 +9,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include <windows.h> 
+
 // Resultado do centro sempre arredondado pra baixo(pra 11, centro 5)
-#define TAM 4
+#define TAM 22
 
 int dx[] = {-1, 1, 0, 0};
 int dy[] = {0, 0, -1, 1};
@@ -69,6 +71,15 @@ void bfs(char matriz[TAM][TAM], int startX, int startY) {
             if (nx >= 0 && nx < TAM && ny >= 0 && ny < TAM && matriz[nx][ny] == '.') {
                 matriz[nx][ny] = '*'; // Marca posição como visitado (Precisa de Timer de algum tempo pra visualizar depois)
                 enfileirar(&f, nx, ny);
+
+                system("cls");
+                imprimirMatriz(matriz);
+                Sleep(1500); 
+
+                // Observando com o timer alto, da pra ver que ele realiza o trabalho por camadas, e só termina quando finaliza uma camada, como explicado em aula
+
+
+                // Acho que seria mais adequado pro FLOOD FILL do paint, pois "colore" de dentro pra fora uniformemente
             }
         }
     }
