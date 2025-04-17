@@ -166,9 +166,14 @@ int main() {
         bfs(matriz, startX, startY);
         printf("\nResultado da BFS:\n");
         imprimirMatriz(matriz);
+    } else if (opcao == 2) {
+        dfs(matriz, startX, startY);
+        printf("\nResultado da DFS:\n");
+        imprimirMatriz(matriz);
     } else {
-        printf("Sem DFS ainda.\n");
+        printf("Opcao invalida.\n");
     }
+
 
     return 0;
 }
