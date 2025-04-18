@@ -1,5 +1,4 @@
-// Adicionar Nós que não podem ser visitados (Genilson)
-// Botar pra busca começar de outro ponto (Carlos)
+// BFS, DFS E FLOOD FILL (Genilson Silva e Carlos Eduardo)
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -212,14 +211,14 @@ int main() {
 
     // Obstáculos (Locais que não podem ser visitados)
     int n_obstaculos;
-    printf("\nQuantos obstaculos deseja adicionar?\n> ");
+    printf("\nQuantos obstaculos quer?\n> ");
     scanf("%d", &n_obstaculos);
 
     for (int i = 0; i < n_obstaculos; i++) {
     int ox, oy;
-    printf("Obstaculo %d - linha (0 a %d): ", i+1, TAM - 1);
+    printf("Obstaculo %d - Linha 0 a %d: ", i+1, TAM - 1);
     scanf("%d", &ox);
-    printf("Obstaculo %d - coluna (0 a %d): ", i+1, TAM - 1);
+    printf("Obstaculo %d - Coluna 0 a %d: ", i+1, TAM - 1);
     scanf("%d", &oy);
 
     if (ox >= 0 && ox < TAM && oy >= 0 && oy < TAM) {
