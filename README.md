@@ -30,3 +30,66 @@ Este projeto busca reforçar conceitos teóricos de grafos com uma visualizaçã
 ## 🖼️ Screenshots
 
 
+---
+
+### ✅ Pré-requisitos
+
+- Compilador C instalado (ex: GCC)
+- Terminal compatível com comandos do sistema
+- Sistema operacional: **Windows ou Linux**
+
+---
+
+## ⚙️ Instalação e Execução
+
+**Linguagem:** C
+**Framework:** Nenhum
+
+1. **Clone o repositório:**
+
+```bash
+git clone https://github.com/projeto-de-algoritmos-2025/Grafos1_Concept.git
+```
+2. **Entre na pasta do projeto:**
+
+```bash
+cd Grafos1_Concept
+gcc main.c -o busca
+./busca
+```
+3. **Compile o código (Windows ou Linux):**
+
+```bash
+gcc main.c -o busca
+./busca
+```
+
+
+---
+
+## ▶️ Uso
+
+Após executar o programa, siga os seguintes passos:
+
+1. **Escolha o algoritmo:**  
+   - Digite `1` para BFS  
+   - Digite `2` para DFS
+
+2. **Escolha o ponto de partida:**  
+   - Digite `1` para iniciar do centro da matriz  
+   - Digite `2` para inserir manualmente as coordenadas iniciais
+
+3. **Se optou por coordenadas manuais:**  
+   - Digite as posições `X` e `Y` (entre 0 e 21) como ponto de início
+
+4. A matriz será exibida passo a passo com as posições visitadas sendo marcadas com `*`.
+
+---
+
+## 🧠 Outros
+
+- O algoritmo **BFS** é implementado com uma **fila**, realizando a busca por camadas.
+- O algoritmo **DFS** utiliza uma **pilha**, explorando um caminho completo antes de retroceder.
+- O projeto foi planejado de forma a demonstrar **visualmente** o comportamento de cada tipo de busca.
+
+
