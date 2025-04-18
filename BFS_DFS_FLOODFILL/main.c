@@ -7,7 +7,7 @@
 #include <windows.h> 
 
 // Resultado do centro sempre arredondado pra baixo(pra 11, centro 5)
-#define TAM 22
+#define TAM 11
 
 int dx[] = {-1, 1, 0, 0};
 int dy[] = {0, 0, -1, 1};
@@ -106,7 +106,7 @@ void bfs(char matriz[TAM][TAM], int startX, int startY) {
                 imprimirMatriz(matriz);
                 printf("Quantidade de Pontos Visitados: %d\n", passos);
                 printf("Quantidade de Passos totais: %d\n", passostotais);
-                Sleep(1500);
+                Sleep(300);
 
                 // Observando com o timer alto, da pra ver que ele realiza o trabalho por camadas, e só termina quando finaliza uma camada, como explicado em aula
 
@@ -132,7 +132,7 @@ void dfs(char matriz[TAM][TAM], int startX, int startY) {
         passostotais++;
 
         // Verifica se já foi visitado
-        if (matriz[atual.x][atual.y] == '*') continue;
+        if (matriz[atual.x][atual.y] == '*' || matriz[atual.x][atual.y] == '#') continue;
 
         matriz[atual.x][atual.y] = '*';
 
@@ -145,7 +145,7 @@ void dfs(char matriz[TAM][TAM], int startX, int startY) {
         printf("Quantidade de Pontos Visitados: %d\n", passos);
         printf("Quantidade de Passos totais: %d\n", passostotais);
 
-        Sleep(1500);
+        Sleep(300);
 
         for (int i = 3; i >= 0; i--) {
             int nx = atual.x + dx[i];
@@ -208,6 +208,23 @@ int main() {
     } else {
         printf("Opcao de início inválida.\n");
         return 1;
+    }
+
+    // Obstáculos (Locais que não podem ser visitados)
+    int n_obstaculos;
+    printf("\nQuantos obstaculos deseja adicionar?\n> ");
+    scanf("%d", &n_obstaculos);
+
+    for (int i = 0; i < n_obstaculos; i++) {
+    int ox, oy;
+    printf("Obstaculo %d - linha (0 a %d): ", i+1, TAM - 1);
+    scanf("%d", &ox);
+    printf("Obstaculo %d - coluna (0 a %d): ", i+1, TAM - 1);
+    scanf("%d", &oy);
+
+    if (ox >= 0 && ox < TAM && oy >= 0 && oy < TAM) {
+        matriz[ox][oy] = '#';
+    }
     }
 
     // Executa o algoritmo escolhido com as coordenadas iniciais informadas
