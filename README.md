@@ -79,6 +79,12 @@ Este projeto busca reforçar conceitos teóricos de grafos com uma visualizaçã
 
 
 ---
+### 🎥 Vídeo de Apresentação
+
+Neste vídeo, apresentamos o trabalho desenvolvido, abordando os principais pontos desenvolvidos ao longo do projeto.
+
+[Assista no Youtube](https://www.youtube.com/embed/dQw4w9WgXcQ)
+---
 
 ### ✅ Pré-requisitos
 
@@ -102,8 +108,6 @@ git clone https://github.com/projeto-de-algoritmos-2025/Grafos1_Concept.git
 
 ```bash
 cd Grafos1_Concept
-gcc main.c -o busca
-./busca
 ```
 3. **Compile o código (Windows ou Linux):**
 
