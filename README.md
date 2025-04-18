@@ -27,48 +27,56 @@ Este projeto busca reforçar conceitos teóricos de grafos com uma visualizaçã
 
 ## 🖼️ Screenshots
 
-<div style="text-align: center">
-<p>Figura 1 - BFS ou DFS</p>
-</div>
+<p align="center">Figura 1 - BFS ou DFS</p>
 
-![BFS e DFS](imgs/bfsdfs.jpg)
-
-<p style="text-align: center; font-size: 14px;">
-    Autores: <a href="https://github.com/dudupaz" target="_blank">Carlos Paz,</a> <a href="https://github.com/GenilsonJrs" target="_blank">Genilson Silva.</a>
+<p align="center">
+  <img src="BFS_DFS_FLOODFILL/imgs/bfsdfs.jpg" alt="BFS e DFS" width="500"/>
 </p>
 
-
-<div style="text-align: center">
-<p>Figura 2 - Obstáculos</p>
-</div>
-
-![Obstáculos](imgs/obstaculos.jpg)
-
-<p style="text-align: center; font-size: 14px;">
-    Autores: <a href="https://github.com/dudupaz" target="_blank">Carlos Paz,</a> <a href="https://github.com/GenilsonJrs" target="_blank">Genilson Silva.</a>
+<p align="center" style="font-size: 14px;">
+  Autores: <a href="https://github.com/dudupaz" target="_blank">Carlos Paz</a>, 
+  <a href="https://github.com/GenilsonJrs" target="_blank">Genilson Silva</a>
 </p>
 
+---
 
-<div style="text-align: center">
-<p>Figura 3 - Funcionamento BFS</p>
-</div>
+<p align="center">Figura 2 - Obstáculos</p>
 
-![BFS](imgs/funcionamento.jpg)
-
-<p style="text-align: center; font-size: 14px;">
-    Autores: <a href="https://github.com/dudupaz" target="_blank">Carlos Paz,</a> <a href="https://github.com/GenilsonJrs" target="_blank">Genilson Silva.</a>
+<p align="center">
+  <img src="BFS_DFS_FLOODFILL/imgs/obstaculos.jpg" alt="Obstáculos" width="500"/>
 </p>
 
-
-<div style="text-align: center">
-<p>Figura 4 - Funcionamento DFS</p>
-</div>
-
-![DFS](imgs/funcionamentodfs.jpg)
-
-<p style="text-align: center; font-size: 14px;">
-    Autores: <a href="https://github.com/dudupaz" target="_blank">Carlos Paz,</a> <a href="https://github.com/GenilsonJrs" target="_blank">Genilson Silva.</a>
+<p align="center" style="font-size: 14px;">
+  Autores: <a href="https://github.com/dudupaz" target="_blank">Carlos Paz</a>, 
+  <a href="https://github.com/GenilsonJrs" target="_blank">Genilson Silva</a>
 </p>
+
+---
+
+<p align="center">Figura 3 - Funcionamento BFS</p>
+
+<p align="center">
+  <img src="BFS_DFS_FLOODFILL/imgs/funcionamento.jpg" alt="Funcionamento BFS" width="500"/>
+</p>
+
+<p align="center" style="font-size: 14px;">
+  Autores: <a href="https://github.com/dudupaz" target="_blank">Carlos Paz</a>, 
+  <a href="https://github.com/GenilsonJrs" target="_blank">Genilson Silva</a>
+</p>
+
+---
+
+<p align="center">Figura 4 - Funcionamento DFS</p>
+
+<p align="center">
+  <img src="BFS_DFS_FLOODFILL/imgs/funcionamentodfs.jpg" alt="Funcionamento DFS" width="500"/>
+</p>
+
+<p align="center" style="font-size: 14px;">
+  Autores: <a href="https://github.com/dudupaz" target="_blank">Carlos Paz</a>, 
+  <a href="https://github.com/GenilsonJrs" target="_blank">Genilson Silva</a>
+</p>
+
 
 ---
 
