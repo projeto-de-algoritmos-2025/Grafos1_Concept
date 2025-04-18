@@ -1,9 +1,6 @@
-// Usar o timer e cls pra ficar visivel e da pra ver
-// Talvez colocar contador pra ver a quantidade de passos
-// Mostrar ordem dos passos talvez
-// Adicionar nós que não podem ser visitados, pra ver o funcionamento parecido com Flood Fill
-// Botar pra busca começar de outro ponto aleatório
-// Mostrar resultado completo, da matriz que iniciou e finalizou, e os passos que deu
+// Contador (Ver Quantidade de Passos)
+// Adicionar Nós que não podem ser visitados
+// Botar pra busca começar de outro ponto
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -20,6 +17,8 @@ typedef struct {
     int x, y;
 } Ponto;
 
+
+//  Fila para BFS
 typedef struct {
     Ponto itens[TAM * TAM];
     int frente, tras;
@@ -79,6 +78,8 @@ void imprimirMatriz(char matriz[TAM][TAM]) {
     printf("\n");
 }
 
+// Função da BFS Com o Timer e CLS
+
 void bfs(char matriz[TAM][TAM], int startX, int startY) {
     Fila f;
     inicializarFila(&f);
@@ -93,7 +94,7 @@ void bfs(char matriz[TAM][TAM], int startX, int startY) {
             int ny = atual.y + dy[i];
 
             if (nx >= 0 && nx < TAM && ny >= 0 && ny < TAM && matriz[nx][ny] == '.') {
-                matriz[nx][ny] = '*'; // Marca posição como visitado (Precisa de Timer de algum tempo pra visualizar depois)
+                matriz[nx][ny] = '*'; // Marca posição como visitado
                 enfileirar(&f, nx, ny);
 
                 system("cls");
@@ -102,12 +103,13 @@ void bfs(char matriz[TAM][TAM], int startX, int startY) {
 
                 // Observando com o timer alto, da pra ver que ele realiza o trabalho por camadas, e só termina quando finaliza uma camada, como explicado em aula
 
-
                 // Acho que seria mais adequado pro FLOOD FILL do paint, pois "colore" de dentro pra fora uniformemente
             }
         }
     }
 }
+
+// Função da DFS Com o Timer e CLS
 
 void dfs(char matriz[TAM][TAM], int startX, int startY) {
     Pilha p;
@@ -161,7 +163,7 @@ int main() {
     int startY = TAM/2;
 
 
-    // Faz a BFS, preenchendo com * na função e imprime a matriz (Depois coloco o timer)
+    // Faz a BFS, preenchendo com * e imprime a matriz
     if (opcao == 1) {
         bfs(matriz, startX, startY);
         printf("\nResultado da BFS:\n");
