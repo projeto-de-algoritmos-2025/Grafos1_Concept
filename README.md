@@ -83,7 +83,7 @@ Este projeto busca reforçar conceitos teóricos de grafos com uma visualizaçã
 
 Neste vídeo, apresentamos o trabalho desenvolvido, abordando os principais pontos desenvolvidos ao longo do projeto.
 
-[Assista no Youtube]((https://youtu.be/EAvEj0eAgV8))
+[Assista no Youtube](https://www.youtube.com/embed/EAvEj0eAgV8)
 ---
 
 ### ✅ Pré-requisitos
