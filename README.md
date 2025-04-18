@@ -21,8 +21,6 @@ A aplicação consiste em uma matriz de tamanho fixo, onde o algoritmo percorre 
 - Qual algoritmo utilizar (BFS ou DFS)
 - Se deseja iniciar a busca do centro da matriz ou de uma coordenada personalizada
 
-Além disso, há um efeito visual utilizando `system("cls")` e `Sleep()` para que o usuário acompanhe passo a passo o processo de busca.
-
 Este projeto busca reforçar conceitos teóricos de grafos com uma visualização prática e didática.
 
 ---
@@ -82,7 +80,12 @@ Após executar o programa, siga os seguintes passos:
 3. **Se optou por coordenadas manuais:**  
    - Digite as posições `X` e `Y` (entre 0 e 21) como ponto de início
 
-4. A matriz será exibida passo a passo com as posições visitadas sendo marcadas com `*`.
+4. O usuário pode escolher nós que não podem ser visitados (obstáculos) e sua quantidade.
+   - Digite a quantidade de nós obstáculos
+   - Digite as posições `X` e `Y` (entre 0 e 21) como obstáculos
+
+5. A matriz será exibida passo a passo com as posições visitadas sendo marcadas com `*`.
+
 
 ---
 
