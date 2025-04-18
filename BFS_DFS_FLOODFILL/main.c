@@ -164,11 +164,14 @@ void dfs(char matriz[TAM][TAM], int startX, int startY) {
 int main() {
     char matriz[TAM][TAM];
 
+    // Preenche toda a matriz com '.' para indicar posições não visitadas
     for (int i = 0; i < TAM; i++)
         for (int j = 0; j < TAM; j++)
             matriz[i][j] = '.';
 
     int opcaoBusca;
+
+    // Solicita ao usuário que escolha entre os algoritmos BFS ou DFS
     printf("Escolha o algoritmo:\n1 - BFS\n2 - DFS\n> ");
     scanf("%d", &opcaoBusca);
 
@@ -181,9 +184,11 @@ int main() {
     printf("\nEscolha o tipo de inicio:\n1 - Comecar do centro da matriz\n2 - Escolher a posicao inicial\n> ");
     scanf("%d", &tipoInicio);
 
-    int startX, startY;
+    int startX, startY; // Variáveis que armazenam as coordenadas iniciais
 
     if (tipoInicio == 1) {
+
+        // Define o ponto inicial como o centro da matriz
         startX = TAM / 2;
         startY = TAM / 2;
     } else if (tipoInicio == 2) {
@@ -205,6 +210,7 @@ int main() {
         return 1;
     }
 
+    // Executa o algoritmo escolhido com as coordenadas iniciais informadas
     if (opcaoBusca == 1) {
         bfs(matriz, startX, startY);
         printf("\nResultado da BFS:\n");
