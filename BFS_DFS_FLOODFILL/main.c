@@ -1,6 +1,5 @@
-// Contador (Ver Quantidade de Passos)
-// Adicionar Nós que não podem ser visitados
-// Botar pra busca começar de outro ponto
+// Adicionar Nós que não podem ser visitados (Genilson)
+// Botar pra busca começar de outro ponto (Carlos)
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -86,6 +85,9 @@ void bfs(char matriz[TAM][TAM], int startX, int startY) {
     enfileirar(&f, startX, startY);
     matriz[startX][startY] = '*';
 
+    int passos = 0;
+    int passostotais = 0;
+
     while (!filaVazia(&f)) {
         Ponto atual = desenfileirar(&f);
 
@@ -93,12 +95,17 @@ void bfs(char matriz[TAM][TAM], int startX, int startY) {
             int nx = atual.x + dx[i];
             int ny = atual.y + dy[i];
 
+            passostotais++;
+
             if (nx >= 0 && nx < TAM && ny >= 0 && ny < TAM && matriz[nx][ny] == '.') {
                 matriz[nx][ny] = '*'; // Marca posição como visitado
                 enfileirar(&f, nx, ny);
+                passos++;
 
                 system("cls");
                 imprimirMatriz(matriz);
+                printf("Quantidade de Pontos Visitados: %d\n", passos);
+                printf("Quantidade de Passos totais: %d\n", passostotais);
                 Sleep(1500);
 
                 // Observando com o timer alto, da pra ver que ele realiza o trabalho por camadas, e só termina quando finaliza uma camada, como explicado em aula
@@ -116,17 +123,28 @@ void dfs(char matriz[TAM][TAM], int startX, int startY) {
     inicializarPilha(&p);
     empilhar(&p, startX, startY);
 
+    int passos = 0;
+    int passostotais = 0;
+
     while (!pilhaVazia(&p)) {
         Ponto atual = desempilhar(&p);
+
+        passostotais++;
 
         // Verifica se já foi visitado
         if (matriz[atual.x][atual.y] == '*') continue;
 
         matriz[atual.x][atual.y] = '*';
 
+        passos++;
+
         // Exibe o passo
         system("cls");
         imprimirMatriz(matriz);
+
+        printf("Quantidade de Pontos Visitados: %d\n", passos);
+        printf("Quantidade de Passos totais: %d\n", passostotais);
+
         Sleep(1500);
 
         for (int i = 3; i >= 0; i--) {
