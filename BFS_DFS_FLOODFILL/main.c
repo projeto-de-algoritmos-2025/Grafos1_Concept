@@ -161,39 +161,59 @@ void dfs(char matriz[TAM][TAM], int startX, int startY) {
     }
 }
 
-
-
 int main() {
     char matriz[TAM][TAM];
 
-    // Preenche matriz com '.'
     for (int i = 0; i < TAM; i++)
         for (int j = 0; j < TAM; j++)
             matriz[i][j] = '.';
 
-    int opcao;
+    int opcaoBusca;
     printf("Escolha o algoritmo:\n1 - BFS\n2 - DFS\n> ");
-    scanf("%d", &opcao);
+    scanf("%d", &opcaoBusca);
 
-    // Por enquanto pega o meio da matriz que a gente escolhe a partir do tamanho como ponto inicial da busca
+    if (opcaoBusca != 1 && opcaoBusca != 2) {
+        printf("Opcao invalida.\n");
+        return 1;
+    }
 
-    int startX = TAM/2;
-    int startY = TAM/2;
+    int tipoInicio;
+    printf("\nEscolha o tipo de inicio:\n1 - Comecar do centro da matriz\n2 - Escolher a posicao inicial\n> ");
+    scanf("%d", &tipoInicio);
 
+    int startX, startY;
 
-    // Faz a BFS, preenchendo com * e imprime a matriz
-    if (opcao == 1) {
+    if (tipoInicio == 1) {
+        startX = TAM / 2;
+        startY = TAM / 2;
+    } else if (tipoInicio == 2) {
+        printf("Digite a linha inicial (0 a %d): ", TAM - 1);
+        scanf("%d", &startX);
+        printf("Digite a coluna inicial (0 a %d): ", TAM - 1);
+        scanf("%d", &startY);
+
+        if (startX < 0 || startX >= TAM || startY < 0 || startY >= TAM) {
+            printf("Posição invalida!\n");
+            return 1;
+        }
+        if (matriz[startX][startY] != '.') {
+            printf("O ponto inicial ja esta ocupado!\n");
+            return 1;
+        }
+    } else {
+        printf("Opcao de início inválida.\n");
+        return 1;
+    }
+
+    if (opcaoBusca == 1) {
         bfs(matriz, startX, startY);
         printf("\nResultado da BFS:\n");
         imprimirMatriz(matriz);
-    } else if (opcao == 2) {
+    } else {
         dfs(matriz, startX, startY);
         printf("\nResultado da DFS:\n");
         imprimirMatriz(matriz);
-    } else {
-        printf("Opcao invalida.\n");
     }
-
 
     return 0;
 }
